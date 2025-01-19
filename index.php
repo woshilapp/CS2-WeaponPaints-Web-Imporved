@@ -167,10 +167,9 @@
                   <v-col cols="6" md="3" lg="2" xl="1" v-for="skin in modalSkinSearchResultItems">
                     <v-tooltip :text="skin.name" location="top">
                       <template v-slot:activator="{ props }">
-                        <v-card v-bind="props" @click="onModalSkinSelect(skin)" variant="text">
+                        <v-card v-bind="props" @click="onModalSkinSelect(skin);" variant="text">
                           <v-img :src="skin.image" height="90" :style="{filter: `drop-shadow(0px 0px 5px ${skin.rarity.color})` }">
-                            <v-overlay :model-value="Number(skin.paint_index) === Number(modalSkin.form.paint) && 
-                                              Number(currentSkins[modalSkin.weapon_defindex]?.weapon_paint_id) === Number(skin.paint_index)" 
+                            <v-overlay :model-value="Number(skin.paint_index) === Number(modalSkin.form.paint)" 
                                       contained class="align-center justify-center">
                               <v-icon size="50" color="green">mdi-check-circle-outline</v-icon>
                             </v-overlay>
